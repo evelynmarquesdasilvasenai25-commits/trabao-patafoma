@@ -31,7 +31,7 @@ public class Mechimento : MonoBehaviour
                 pulando = true;
                 inicioPulo = frameAtual;
             }
-        if (pulando && frameAtual - inicioPulo > 100)
+        if (pulando && frameAtual - inicioPulo > 0.05f)
             {
                 pulando = false;
             }
@@ -40,7 +40,11 @@ public class Mechimento : MonoBehaviour
                 this.transform.Translate(0, 0.05f, 0);
             }
     
-
+        if !Physics.Checksphere(transform.position, 1f)
+        {
+            transform.Translate(0, -0.10f, 0);
+        }
+    
     }
 
 
