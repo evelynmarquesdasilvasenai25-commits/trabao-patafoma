@@ -15,29 +15,30 @@ public class Mechimento : MonoBehaviour
     void Update()
     {
         frameAtual = frameAtual + 1;
-    if (Input.GetKey("d"))
-        {
-            transform.Translate(0.05f, 0, 0);
-        }
+    //Faz o boneco andar pra frente
+        if (Input.GetKey("d"))
+            {
+            this.transform.Translate(0.05f, 0, 0);
+            }
 
-    if (Input.GetKey("a"))
-        {
-            transform.Translate(-0.05f, 0, 0);
-        }
+        if (Input.GetKey("a"))
+            {
+            this.transform.Translate(-0.05f, 0, 0);
+            }
 
-        if (Input.GetKey("space") && pulando == false && Physics.CheckSphere(transform.position, 2f));
-        {
-            pulando = true;
-            inicioPulo = frameAtual;
-        }
-        if (pulando && frameAtual - inicioPulo > 1.0)
-        {
-            pulando = false;
-        }
+        if (Input.GetKey("space") && pulando == false && Physics.CheckSphere(transform.position, 0.05f))
+            {
+                pulando = true;
+                inicioPulo = frameAtual;
+            }
+        if (pulando && frameAtual - inicioPulo > 100)
+            {
+                pulando = false;
+            }
         if (pulando)
-        {
-            this.transform.Translate(0, 0.05f, 0);
-        }
+            {
+                this.transform.Translate(0, 0.05f, 0);
+            }
     
 
     }
