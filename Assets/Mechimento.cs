@@ -40,7 +40,7 @@ public class Mechimento : MonoBehaviour
                 this.transform.Translate(0, 0.05f, 0);
             }
     
-        if !Physics.Checksphere(transform.position, 1f)
+        if (!Physics.CheckSphere(transform.position, 1f))
         {
             transform.Translate(0, -0.10f, 0);
         }
